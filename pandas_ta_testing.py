@@ -61,7 +61,7 @@ for item in best_indicators:
     print("Indicator: ", item)
     temp = eval(f"eth.ta.{item}()")
     # add temp to eth
-    eth = eth.merge(temp, right_index=True)
+    eth = eth.join(temp, how="outer")
 
 print("len eth: ", len(eth))
 print(eth.head())
