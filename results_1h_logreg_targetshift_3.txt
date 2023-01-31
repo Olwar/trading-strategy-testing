@@ -1,0 +1,2 @@
+symbol: FEI-USD | length: 1710 | accuracy: 0.5058479532163743 | cross_val_scores: [0.51692708 0.51706037 0.49222798 0.49859551 0.50200267] | cross_val_scores_avg: 0.505362721181392 | precision: 0.5094549499443827 | tn: 407, fp: 441, fn: 404, tp: 458 | 
+symbol: FTT-USD | length: 1897 | accuracy: 0.47812335266209804 | cross_val_scores: [0.44680851 0.49038462 0.40740741 0.54       0.55963303] | cross_val_scores_avg: 0.4888467121906513 | precision: 0.6042780748663101 | tn: 794, fp: 74, fn: 916, tp: 113 | 

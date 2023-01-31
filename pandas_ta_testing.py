@@ -7,7 +7,7 @@ import numpy as np
 from datetime import datetime
 
 # download ethereum data from yfinance
-eth = yf.download('ETH-USD', period='max', interval='1d')
+eth = yf.download('QQQ', period='max', interval='1d')
 
 # convert to pandas dataframe
 eth = pd.DataFrame(eth)
@@ -61,8 +61,16 @@ for item in best_indicators:
     print("Indicator: ", item)
     temp = eval(f"eth.ta.{item}()")
     # add temp to eth
-    eth = eth.join(temp, how="outer")
+    eth = eth.join(temp, how="outer", rsuffix=f"_{item}")
 
 print("len eth: ", len(eth))
 print(eth.head())
+eth.dropna(inplace=True)
+print("len eth: ", len(eth))
 
+# make all values pct_change unless they are categorical
+eth = eth.pct_change()
+
+print(eth.head())
+# write to csv
+eth.to_csv("QQQ_pctchange.csv")
